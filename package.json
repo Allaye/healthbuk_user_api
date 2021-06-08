@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/Allaye/healthbuk_payment_api/issues"
   },
-  "homepage": "https://github.com/Allaye/healthbuk_payment_api#readme"
+  "homepage": "https://github.com/Allaye/healthbuk_payment_api#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
 }
