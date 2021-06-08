@@ -4,6 +4,8 @@
   "description": "a minimal banking api with authentication",
   "main": "server.js",
   "scripts": {
+    "prod": "node src/server.js",
+    "dev": "npx nodemon src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +19,7 @@
   },
   "homepage": "https://github.com/Allaye/healthbuk_payment_api#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "mysql": "^2.18.1"
   },
   "devDependencies": {
