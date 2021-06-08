@@ -1,0 +1,19 @@
+{
+  "name": "healthbuk_payment_api",
+  "version": "1.0.0",
+  "description": "a minimal banking api with authentication",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Allaye/healthbuk_payment_api.git"
+  },
+  "author": "Allaye",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Allaye/healthbuk_payment_api/issues"
+  },
+  "homepage": "https://github.com/Allaye/healthbuk_payment_api#readme"
+}
