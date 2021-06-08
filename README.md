@@ -1,2 +1,2 @@
-# health_payment_api
+# healthbuk_payment_api
 a basic payment processing api, with minimal features
