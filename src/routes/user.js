@@ -44,6 +44,7 @@ router.post('/login', async (req, res)=>{
     try {
         const user = await User.findOne({where: {email: req.body.email}});
         if(user){
+            console.log(user.id);
             const isMatch = await bcrypt.compare(req.body.password, user.password);
             if(isMatch){
                 const accesstoken = generateAuthToken({id: user.id}, process.env.access_token_secret);
