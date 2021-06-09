@@ -1,8 +1,14 @@
+const path = require('path');
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const User = require('../models/user');
+const auth = require('../middleware/auth');
 const password_hasher = require('../util/password_hash');
 const generateAuthToken = require('../util/generateAuthtoken');
+require('dotenv').config({path: path.resolve(__dirname,'../../.env')});
+
+
+
 const router = express.Router();
 
 
@@ -40,17 +46,23 @@ router.post('/login', async (req, res)=>{
         if(user){
             const isMatch = await bcrypt.compare(req.body.password, user.password);
             if(isMatch){
-                const accesstoken = 
+                const accesstoken = generateAuthToken({id: user.id}, process.env.access_token_secret);
+                res.send({ accesstoken: accesstoken });
+            }else{
+                throw new Error('Authentication failed');
             }
-
+        }else{
+            throw new Error('Bad Logins!');
         }
     } catch (error) {
-        
+        res.status(401).send('Authentication failed');
     }
 });
 
-router.post('/logout', (req, res)=>{
 
+
+router.get('/profile', auth, async (req, res)=>{
+    res.send(req.user);
 })
 
 router.delete('/close', (req, res)=>{

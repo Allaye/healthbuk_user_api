@@ -1,6 +1,5 @@
 const path = require('path');
 const jwt = require('jsonwebtoken');
-require('dotenv').config({path: path.resolve(__dirname,'../../.env')})
 
 
 const generateAuthToken = (user, access_token_secret)=>{
@@ -12,4 +11,4 @@ const generateAuthToken = (user, access_token_secret)=>{
     }
 }
 
-module.exports =generateAuthToken;
+module.exports = generateAuthToken;
