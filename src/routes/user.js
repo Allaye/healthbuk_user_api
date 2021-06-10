@@ -63,7 +63,8 @@ router.post('/login', async (req, res)=>{
 
 
 router.get('/profile', auth, async (req, res)=>{
-    res.send(req.user);
+    return res.render('profile', {data: req.user})
+
 })
 
 router.delete('/close', (req, res)=>{
