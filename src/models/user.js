@@ -2,6 +2,7 @@ const Sequelize = require("sequelize");
 const sequelize = require("../db/sequelize");
 
 const User = sequelize.define('user',{
+    // creating the user model, representing how the user table will look like
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -34,7 +35,7 @@ const User = sequelize.define('user',{
 
 (async () => {
     await sequelize.sync();
-    // Code here
+    // This creates the table if it doesn't exist (and does nothing if it already exists)
 })();
 
 module.exports = User; 

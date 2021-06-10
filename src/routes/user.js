@@ -13,11 +13,6 @@ const router = express.Router();
 
 
 
-router.get('/', (req, res)=>{
-    res.json({status: 'success'});
-});
-
-
 router.post('/register', async (req, res)=>{
     try {
         const email = await User.findOne({where: {email: req.body.email}});
@@ -44,7 +39,6 @@ router.post('/login', async (req, res)=>{
     try {
         const user = await User.findOne({where: {email: req.body.email}});
         if(user){
-            console.log(user.id);
             const isMatch = await bcrypt.compare(req.body.password, user.password);
             if(isMatch){
                 const accesstoken = generateAuthToken({id: user.id}, process.env.access_token_secret);
@@ -64,11 +58,8 @@ router.post('/login', async (req, res)=>{
 
 router.get('/profile', auth, async (req, res)=>{
     return res.render('profile', {user: req.user})
-
 })
 
-router.delete('/close', (req, res)=>{
-    res.json({status: 'closed account'})
-})
+
 
 module.exports = router;
