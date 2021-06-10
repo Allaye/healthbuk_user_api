@@ -14,16 +14,16 @@
 
     <nav class="navbar navbar-dark bg-primary mb-3">
         <div class="container">
-            <a href="#" class="navbar-brand">Github Repo Commit Finder</a>
+            <a href="#" class="navbar-brand">User Dashboard</a>
         </div>
     </nav>
     <div class="container searchContainer">
         <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
             <% if (user) { %>
-                <div class="card-header">Welcome <%= data.name %></div>
+                <div class="card-header">Welcome <%= user.name %></div>
                 <div class="card-body">
-                    <h5 class="card-title">You have successfully login with <%= data.email %></h5>
-                    <p class="card-text">Hey this is just a basic dashboard to show you are login.</p>
+                    <h5 class="card-title">You have successfully login with <%= user.email %></h5>
+                    <p class="card-text">Hey this is just a basic dashboard to show login success.</p>
                 </div>
                 </div>
             <% } %>

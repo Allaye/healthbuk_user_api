@@ -1,9 +1,11 @@
+const path = require('path');
 const Sequelize = require('sequelize');
-require('dotenv').config();
+require('dotenv').config({path: path.resolve(__dirname,'../../.env')});
 
-const sequelize = new Sequelize('healthbuk', 'oga', 'ogaogaogaoga', {
-    dialect: 'mysql',
-    host: 'localhost'
+
+const sequelize = new Sequelize(process.env.database, process.env.user, process.env.password,{
+    dialect: process.env.dbtype,
+    host: process.env.host
 });
 
 

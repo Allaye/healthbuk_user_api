@@ -63,7 +63,7 @@ router.post('/login', async (req, res)=>{
 
 
 router.get('/profile', auth, async (req, res)=>{
-    return res.render('profile', {data: req.user})
+    return res.render('profile', {user: req.user})
 
 })
 
