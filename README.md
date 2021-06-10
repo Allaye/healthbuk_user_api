@@ -1,4 +1,4 @@
-# healthbuk_payment_api
+# healthbuk_user_api
 a basic user processing api, with minimal features
 
 
